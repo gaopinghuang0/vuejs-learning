@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Example 1</title>
+</head>
+<body>
+
+  <h1>Vuejs Directives</h1>
+
+  <p>All directives of vuejs start with "v-", such as v-if, v-for, v-model, v-on, v-bind, and so on.</p>
+
+  <h2>0. Data binding from js, without directives</h2>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <h2>1. Data binding through "v-model"</h2>
+  <div id="app-2">
+    <p>You entered: {{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <h2>2. Data binding with computed variable</h2>
+  <div id="app-3">
+    <p>You entered: {{ message }}, computed: {{computedMessage}}</p>
+    <input v-model="message">
+  </div>
+
+  <h2>3. Data binding with method</h2>
+  <div id="app-4">
+    <p>You entered: {{ message }}, computed: {{computedMessage}}</p>
+    <input v-model="message">
+  </div>
+
+  <!-- include scripts at the bottom of body -->
+  <!-- include vue.js via CDN -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="/dist/commons.js"></script>
+  <script src="/dist/eg1.bundle.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
