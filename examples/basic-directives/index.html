@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Basic Example 1</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
+  <!-- livereload browser if dev -->
+  <script src="//localhost:35729/livereload.js"></script>
 </head>
 <body>
 
@@ -21,23 +24,32 @@
     <input v-model="message">
   </div>
 
-  <h2>2. Data binding with computed variable</h2>
+  <h2>2. Data binding plus computed property</h2>
   <div id="app-3">
-    <p>You entered: {{ message }}, computed: {{computedMessage}}</p>
+    <p>You entered: {{ message }}</p>
+    <p>Computed: {{ reversedMessage }}</p>
     <input v-model="message">
+    <p>Note: computed property is very useful since it will keep up to date with relevant data. It's also very efficient when more than one data is involved, because it will only up</p>
   </div>
+  <pre>
+    <p>You entered: {{ message }}</p>
+    <p>Computed: {{ reversedMessage }}</p>
+  </pre>
 
   <h2>3. Data binding with method</h2>
   <div id="app-4">
-    <p>You entered: {{ message }}, computed: {{computedMessage}}</p>
+    <p>You entered: {{ message }}, computed: {{ reverseMessage() }}</p>
     <input v-model="message">
   </div>
+  <pre>
+  <code>
+    <p>You entered: {{ message }}, computed: {{ reverseMessage() }}</p>
+  </code>
+  </pre>
 
   <!-- include scripts at the bottom of body -->
   <!-- include vue.js via CDN -->
   <script src="https://unpkg.com/vue"></script>
-  <script src="/dist/commons.js"></script>
-  <script src="/dist/eg1.bundle.js"></script>
-  <script src="./index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

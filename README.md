@@ -1,17 +1,31 @@
 # vuejs-learning
 Mini examples of vuejs
 
-## Webpack
+## Run
+```bash
+python -m SimpleHTTPServer   
+# OR if npm is installed
+npm start
+
+# Then open browser and go to http://localhost:8000
+```
+
+## Development
+Open a new tab that is different from the above one for Run
+```bash
+npm install  # install all dependency modules
+
+# use Grunt to auto reload once file changes
+# there are two ways to run Grunt
+# 1. install grunt command line tool globally if has root access
+npm install grunt-cli -g
+grunt
+
+# 2. run local grunt
+./node_modules/.bin/grunt
+
+```
+
+## ~~Webpack~~
 See [beginner guide](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/)
 
-## Webpack hot reload
-`npm install webpack-dev-server --save-dev`
-
-## hot reload index.html
-Unfortunately, webpack does not auto-reload index.html. See the workaround below:
-
-https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/html-reload
-
-and 
-
-https://stackoverflow.com/questions/33183931/how-to-watch-index-html-using-webpack-dev-server-and-html-webpack-plugin

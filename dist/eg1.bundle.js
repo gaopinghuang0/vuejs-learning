@@ -1,1 +1,0 @@
-webpackJsonp([1],{"./eg1.entry.js":function(e,n){}},["./eg1.entry.js"]);
