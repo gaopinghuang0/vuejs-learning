@@ -14,41 +14,133 @@
 
 <body>
   <h1>Vuejs Directives</h1>
-  <p>All directives of vuejs start with "v-", such as v-if, v-for, v-model, v-on, v-bind, and so on.</p>
-  <p>It's very like AngularJS.</p>
+  <p>Directives help to handle data-binding, event-listening, conditional rendering, and so on. Therefore, in Javascript, there is no need to interact with DOM elements, which is nicely decoupled.</p>
+  <p>All directives of Vuejs start with "v-", such as v-if, v-for, v-model, v-on, v-bind, and so on.</p>
+  <p>It's very like AngularJS in which directives start with "ng-".</p>
 
 
-  <h4 class="page-header">0. Data binding from js, without directives</h4>
+  <h4 class="page-header">1. Data binding from js, without directives</h4>
   <div id="app">
     {{ message }}
   </div>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app&quot;&gt;
+        {{ message }}
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!',
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
-
-  <h4 class="page-header">1. Data binding through "v-model"</h4>
+  <h4 class="page-header">2. Data binding through "v-model"</h4>
   <div id="app-2">
     <p>You entered: {{ message }}</p>
     <input v-model="message">
   </div>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-2&quot;&gt;
+        &lt;p&gt;You entered: {{ message }}&lt;/p&gt;
+        &lt;input v-model=&quot;message&quot;&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: 'Hello Vue!',
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
-
-  <h4 class="page-header">2. Data binding plus computed property</h4>
+  <h4 class="page-header">3. Data binding plus computed property</h4>
   <div id="app-3">
-    <p>You entered: {{ message }}
-      <br> Computed: {{ reversedMessage }}</p>
+    <p>You entered: {{ message }} <br> 
+      Computed reverse: {{ reversedMessage }}</p>
     <input v-model="message">
   </div>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-3&quot;&gt;
+        &lt;p&gt;You entered: {{ message }} &lt;br&gt; 
+          Computed reverse: {{ reversedMessage }}&lt;/p&gt;
+        &lt;input v-model=&quot;message&quot;&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app3 = new Vue({
+        el: '#app-3',
+        data: {
+          message: 'Hello Vue!',
+        },
+        computed: {
+          // a computed getter
+          reversedMessage: function () {
+            // `this` points to the app3 instance
+            return this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
-
-  <h4 class="page-header">3. Data binding with methods</h4>
+  <h4 class="page-header">4. Data binding with methods</h4>
   <div id="app-4">
-    <p>You entered: {{ message }}
-      <br> Computed: {{ reverseMessage() }}</p>
+    <p>You entered: {{ message }}  <br> 
+      Reverse by method: {{ reverseMessage() }}</p>
     <input v-model="message">
   </div>
+  
   <p>To know the difference between computed property and methods, see <a href="https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods">this comparison</a>. Moreover, computed property has extra benefits when it involves more than one variable. Once any one variable changes, the computed property will also update accordingly. This saves the effort to watch variables manually (see <a href="https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property">this example</a> if you are interested.)</p>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-4&quot;&gt;
+        &lt;p&gt;You entered: {{ message }}  &lt;br&gt; 
+          Reverse by method: {{ reverseMessage() }}&lt;/p&gt;
+        &lt;input v-model=&quot;message&quot;&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app4 = new Vue({
+        el: '#app-4',
+        data: {
+          message: 'Hello Vue!',
+        },
+        methods: {
+          reverseMessage: function () {
+            return this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
 
-  <h4 class="page-header">4. Conditional view via "v-if" and "v-else"</h4>
+  <h4 class="page-header">5. Conditional rendering via "v-if" and "v-else"</h4>
   <div id="app-5">
     <div>
       <label>
@@ -68,9 +160,43 @@
       </div> 
     </div>
   </div>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-5&quot;&gt;
+        &lt;div&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;radio&quot; value=&quot;A&quot; v-model=&quot;picked&quot;&gt; Show A
+          &lt;/label&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;radio&quot; value=&quot;B&quot; v-model=&quot;picked&quot;&gt; Show B
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          Picked: {{picked}}
+          &lt;div v-if=&quot;picked === 'A'&quot;&gt;
+            &lt;div&gt;Content of A&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div v-else&gt;
+            &lt;div&gt;Content of B&lt;/div&gt;
+          &lt;/div&gt; 
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app5 = new Vue({
+        el: '#app-5',
+        data: {
+          picked: '',
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
-
-  <h4 class="page-header">5. Render a list of data via "v-for"</h4>
+  <h4 class="page-header">6. Render a list of data via "v-for"</h4>
   <p>This is very helpful to generate a list of items that have the same format but different content.</p>
   <div id="app-6">
     <ul id="example-1">
@@ -79,9 +205,34 @@
       </li>
     </ul>
   </div>
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-6&quot;&gt;
+        &lt;ul id=&quot;example-1&quot;&gt;
+          &lt;li v-for=&quot;item in items&quot;&gt;
+            {{ item.message }}
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app6 = new Vue({
+        el: '#app-6',
+        data: {
+          items: [
+            {message: 'Foo'},
+            {message: 'Bar'}
+          ],
+        }
+      })
+    </code>
+    </pre>
+  </div>
 
-
-  <h4 class="page-header">6. Event handling via "v-on"</h4>
+  <h4 class="page-header">7. Event handling via "v-on"</h4>
   <div id="app-7">
     Click to update counter:
     <div class="counter-group">
@@ -90,9 +241,42 @@
       <button v-on:click="increase">+</button>
     </div>
   </div>
-
+  <div class="source-code">
+    <pre v-show="showCode" class="code-area">
+    <code>
+      &lt;div id=&quot;app-7&quot;&gt;
+        Click to update counter:
+        &lt;div class=&quot;counter-group&quot;&gt;
+          &lt;button v-on:click=&quot;decrease&quot;&gt;-&lt;/button&gt;
+          &lt;input type=&quot;text&quot; v-model=&quot;counter&quot; readonly=&quot;true&quot;&gt;
+          &lt;button v-on:click=&quot;increase&quot;&gt;+&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+    </pre>
+    <pre v-show="showCode" class="code-area">
+    <code>
+      var app7 = new Vue({
+        el: '#app-7',
+        data: {
+          counter: 0,
+        },
+        methods: {
+          decrease: function() {
+            if (this.counter > 0) {
+              this.counter -= 1
+            }
+          },
+          increase: function() {
+            this.counter += 1
+          }
+        }
+      })
+    </code>
+    </pre>
+  </div>
   <h4 class="page-header">Short summary</h4>
-  <p>So far, I have briefly introduced the vuejs directives. For more details, <a href="https://vuejs.org/v2/guide/index.html">go to the website and see more examples of each directive.</a></p>
+  <p>So far, I have briefly introduced some Vuejs directives. For more details of each directive, <a href="https://vuejs.org/v2/guide/index.html">go to the official website</a>.</p>
   <p><a href="/">Return to homepage</a></p>
 
   <!-- include scripts at the bottom of body -->
