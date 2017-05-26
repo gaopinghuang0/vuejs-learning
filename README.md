@@ -1,5 +1,5 @@
 # vuejs-learning
-Mini examples of vuejs
+Mini examples of vuejs. See [official guide](https://vuejs.org/v2/guide/index.html)
 
 ## Run
 ```bash
@@ -28,9 +28,9 @@ grunt
 <script src="//localhost:35729/livereload.js"></script>
 ```
 
-## Screenshot
-[checkout](./examples/comprehensive-example/demo-checkout-via-vuejs.png)
+## Screenshot of ./examples/comprehensive-example
+![checkout](./examples/comprehensive-example/demo-checkout-via-vuejs.png)
 
 ## ~~Webpack~~
-See [beginner guide](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/)
+~~See [beginner guide](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/)~~
 
