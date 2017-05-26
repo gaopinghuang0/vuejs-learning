@@ -1,16 +1,16 @@
 $bluegrey: #2B3A42;
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 18px;
-    margin: 10px 50px 40px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #34495e;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  margin: 10px 50px 40px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #34495e;
 }
 
 body a {
-    color: #42b983;
-    font-weight: 600;
+  color: #42b983;
+  font-weight: 600;
 }
 
 // pre {
@@ -22,19 +22,30 @@ body a {
 //   text-shadow: 0 1px 1px rgba(#000, .5);
 // }
 ol {
-    li {
-        padding: 5px 0px;
-    }
+  li {
+    padding: 5px 0px;
+  }
 }
 
 input {
-    font-family: Helvetica;
-    font-size: 20px;
-    padding-left: 5px;
+  font-family: Helvetica;
+  font-size: 20px;
+  padding-left: 5px;
 }
 
 .page-header {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
-    padding-top: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  padding-top: 30px;
+}
+
+.counter-group {
+  button {
+    font-size: 18px;
+    height: 29px;
+    width: 29px;
+  }
+  input {
+    width: 30px;
+  }
 }

@@ -28,4 +28,13 @@ input {
   padding-top: 30px;
 }
 
+.counter-group button {
+  font-size: 18px;
+  height: 29px;
+  width: 29px;
+}
+.counter-group input {
+  width: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -47,7 +47,7 @@
   <p>To know the difference between computed property and methods, see <a href="https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods">this comparison</a>. Moreover, computed property has extra benefits when it involves more than one variable. Once any one variable changes, the computed property will also update accordingly. This saves the effort to watch variables manually (see <a href="https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property">this example</a> if you are interested.)</p>
 
 
-  <h4 class="page-header">4. Conditional view via "v-if"</h4>
+  <h4 class="page-header">4. Conditional view via "v-if" and "v-else"</h4>
   <div id="app-5">
     <div>
       <label>
@@ -60,10 +60,10 @@
     <div>
       Picked: {{picked}}
       <div v-if="picked === 'A'">
-        <div>show content of A</div>
+        <div>Content of A</div>
       </div>
       <div v-else>
-        <div>show content of B</div>
+        <div>Content of B</div>
       </div> 
     </div>
   </div>
@@ -79,6 +79,19 @@
     </ul>
   </div>
 
+
+  <h4 class="page-header">6. Event handling via "v-on"</h4>
+  <div id="app-7">
+    Click to update counter:
+    <div class="counter-group">
+      <button v-on:click="decrease">-</button>
+      <input type="text" v-model="counter" readonly="true">
+      <button v-on:click="increase">+</button>
+    </div>
+  </div>
+
+  <h4 class="page-header">Short summary</h4>
+  <p>So far, I have briefly introduced the vuejs directives. For more details, <a href="https://vuejs.org/v2/guide/index.html">go to the website and see more examples of each directive.</a></p>
 
   <!-- include scripts at the bottom of body -->
   <!-- include vue.js via CDN -->

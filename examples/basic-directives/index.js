@@ -61,4 +61,21 @@ var app6 = new Vue({
 })
 
 
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    counter: 0
+  },
+  methods: {
+    decrease: function() {
+      if (this.counter > 0) {
+        this.counter -= 1
+      }
+    },
+    increase: function() {
+      this.counter += 1
+    }
+  }
+})
+
 })()
