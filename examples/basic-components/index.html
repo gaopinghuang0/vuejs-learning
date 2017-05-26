@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Components</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
+  <!-- livereload browser if dev -->
+  <script src="//localhost:35729/livereload.js"></script>
+  <!-- highlight code -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+</head>
+
+<body>
+  <h1>Vuejs Components</h1>
+  <p>Components are one of the most powerful features of Vue. See <a href="https://vuejs.org/v2/guide/components.html">the official guide</a>.</p>
+  <p>It's like ReactJS but has many differences. See the comparison <a href="https://vuejs.org/v2/guide/comparison.html#React">Vue vs. React</a></p>
+
+  HTML
+  <p>Here shows a reusable component "button-counter". The component has a customized event listener: increment. To trigger this event, we can use directive "v-on" discussed in the <a href="/examples/basic-directives/">basic directive page</a>. Then it will call the event handler defined in the parent Vue instance (e.g., incrementTotal).</p>
+  <pre>
+    <code>
+      &lt;div id=&quot;counter-event-example&quot;&gt;
+        &lt;p&gt;{{ total }}&lt;/p&gt;
+        &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+        &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
+  JS
+  <p>Here shows how we register a component and customize event. First, register a component via "Vue.component". The component name is recommended (not enforced) to follow W3C rules (all-lowercase, must contain a hyphen). </p>
+  <p>Then we can provide a template which will replace the component after rendering. To define a customized event listener, we first use normal "v-on:click" to call a method of the component (e.g., increment). Within the method, it uses "this.$emit()" to emit an event to the parent. Therefore, the parent can register an event handler to listen to the event happened inside a component.</p>
+  <pre>
+    <code>
+      Vue.component('button-counter', {
+        template: '&lt;button v-on:click=&quot;increment&quot;&gt;{{ counter }}&lt;/button&gt;',
+        data: function () {
+          return {
+            counter: 0
+          }
+        },
+        methods: {
+          increment: function () {
+            this.counter += 1
+            this.$emit('increment')
+          }
+        },
+      })
+
+      new Vue({
+        el: '#counter-event-example',
+        data: {
+          total: 0
+        },
+        methods: {
+          incrementTotal: function () {
+            this.total += 1
+          }
+        }
+      })
+    </code>
+  </pre>
+
+  RESULT:
+  <div id="counter-event-example">
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+  </div>
+
+  <br><br>
+  There are more details about how to pass data from parent to child component (see  <a href="https://vuejs.org/v2/guide/components.html">the official guide</a>.).
+  <p><a href="/">Return to homepage</a></p>
+
+
+  <!-- include scripts at the bottom of body -->
+  <!-- include vue.js via CDN -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="index.js"></script>
+  <script>
+  hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
+</html>

@@ -28,6 +28,9 @@ grunt
 <script src="//localhost:35729/livereload.js"></script>
 ```
 
+## Screenshot
+[checkout](./examples/comprehensive-example/demo-checkout-via-vuejs.png)
+
 ## ~~Webpack~~
 See [beginner guide](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/)
 
