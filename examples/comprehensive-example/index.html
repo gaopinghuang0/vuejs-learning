@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="/dist/css/style.css">
   <!-- livereload browser if dev -->
   <script src="//localhost:35729/livereload.js"></script>
-  <!-- highlight code -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
 </head>
 
 <body>
@@ -21,18 +18,36 @@
         <div class="number">1</div>
         <div class="name">Shipping address</div>
         <div class="content">
-          SOME ADDRESS <br> IN, USA
-          <button>Change</button>
+          <div v-if="editAddress">
+            <label>Address:</label> <br>
+            <input type="text" v-model="address"> <br>
+            <label>State:</label> <br>
+            <input type="text" v-model="state"> <br>
+            <label>Zipcode:</label> <br>
+            <input type="text" v-model="zipcode"> <br>
+          </div>
+          <div v-else>
+            <!-- add some filters -->
+            {{address | uppercase}} <br>
+            {{state | uppercase}} {{zipcode}}, USA
+          </div>
+
+          <button v-if="!editAddress" v-on:click="editAddress = !editAddress">Change</button>
+          <button v-else v-on:click="editAddress = !editAddress">Save</button>
         </div>
       </div>
       <div class="step">
         <div class="number">2</div>
         <div class="name">Payment method</div>
         <div class="content">
-          VISA ending in xxxx
-          <br>
-          <strong>Billing address:</strong> SOME ADDRESS
-          <button>Change</button>
+          <div v-if="editPayment">
+            <label>Card Number:</label> <br>
+            <input type="text" v-model="cardnumber"> <br>            
+          </div>
+          <div v-else>VISA ending in {{cardnumber | last4digit}}</div>
+          <strong>Billing address:</strong> {{billingAddress | uppercase}}
+          <button v-if="!editPayment" v-on:click="editPayment = !editPayment">Change</button>
+          <button v-else v-on:click="editPayment = !editPayment">Save</button>
         </div>
       </div>
       <div class="step">
@@ -111,9 +126,6 @@
   <!-- include vue.js via CDN -->
   <script src="https://unpkg.com/vue"></script>
   <script src="index.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
 </body>
 
 </html>

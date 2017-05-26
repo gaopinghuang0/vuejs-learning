@@ -80,6 +80,9 @@ h1 {
   position: relative;
   font-family: serif;
 }
+.main .content input {
+  font-size: 14px;
+}
 .main .content button {
   padding: 1px 20px;
   position: absolute;

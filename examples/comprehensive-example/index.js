@@ -1,4 +1,14 @@
 
+// register some filters
+Vue.filter('uppercase', function(value) {
+  return value.toUpperCase()
+})
+
+Vue.filter('last4digit', function(value) {
+  return value.slice(value.length-4)
+})
+
+
 
 Vue.component('order-item', {
   template: '#item-template',  // include template from <script type="x-template">
@@ -44,9 +54,18 @@ new Vue({
       seller: 'Amazon.com LLC',
       price: 19.99,
       number: 1
-    }]
+    }],
+    zipcode: 47906,
+    state: 'IN',
+    address: 'SOME ADDRESS',
+    editAddress: false,
+    editPayment: false,
+    cardnumber: '000000000001234'
   },
   computed: {
+    billingAddress: function() {
+      return this.address + ', ' + this.state + ' ' + this.zipcode + ', USA'
+    },
     totalCostWithTax: function() {
       return (Number(this.totalCostNoTax) + Number(this.tax)).toFixed(2)
     },
@@ -59,7 +78,7 @@ new Vue({
         total += item.price * item.number
       })
       return total.toFixed(2)
-    }
+    },
   },
   methods: {
     decreaseNumber: function(id) {
