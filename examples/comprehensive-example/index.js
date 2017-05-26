@@ -9,7 +9,7 @@ Vue.filter('last4digit', function(value) {
 })
 
 
-
+// register components
 Vue.component('order-item', {
   template: '#item-template',  // include template from <script type="x-template">
   props: ['item'],  // properties passed from parent
@@ -37,6 +37,7 @@ Vue.component('my-sidebar', {
   }
 })
 
+// create a root vue instance
 new Vue({
   el: '#app',
   data: {
