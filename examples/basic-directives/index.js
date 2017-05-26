@@ -43,4 +43,22 @@ var app4 = new Vue({
   }
 })
 
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    picked: ''
+  }
+})
+
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    items: [
+      {message: 'Foo'},
+      {message: 'Bar'}
+    ]
+  }
+})
+
+
 })()

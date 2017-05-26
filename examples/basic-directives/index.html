@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Basic Example 1</title>
+  <title>Basic directives</title>
   <link rel="stylesheet" href="/dist/css/style.css">
   <!-- livereload browser if dev -->
   <script src="//localhost:35729/livereload.js"></script>
+  <!-- highlight code -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
 </head>
+
 <body>
-
   <h1>Vuejs Directives</h1>
-
   <p>All directives of vuejs start with "v-", such as v-if, v-for, v-model, v-on, v-bind, and so on.</p>
 
-  <h2>0. Data binding from js, without directives</h2>
+
+  <h4 class="page-header">0. Data binding from js, without directives</h4>
   <div id="app">
     {{ message }}
   </div>
 
-  <h2>1. Data binding through "v-model"</h2>
+
+  <h4 class="page-header">1. Data binding through "v-model"</h4>
   <div id="app-2">
     <p>You entered: {{ message }}</p>
     <input v-model="message">
   </div>
 
-  <h2>2. Data binding plus computed property</h2>
-  <div id="app-3">
-    <p>You entered: {{ message }}</p>
-    <p>Computed: {{ reversedMessage }}</p>
-    <input v-model="message">
-    <p>Note: computed property is very useful since it will keep up to date with relevant data. It's also very efficient when more than one data is involved, because it will only up</p>
-  </div>
-  <pre>
-    <p>You entered: {{ message }}</p>
-    <p>Computed: {{ reversedMessage }}</p>
-  </pre>
 
-  <h2>3. Data binding with method</h2>
-  <div id="app-4">
-    <p>You entered: {{ message }}, computed: {{ reverseMessage() }}</p>
+  <h4 class="page-header">2. Data binding plus computed property</h4>
+  <div id="app-3">
+    <p>You entered: {{ message }}
+      <br> Computed: {{ reversedMessage }}</p>
     <input v-model="message">
   </div>
-  <pre>
-  <code>
-    <p>You entered: {{ message }}, computed: {{ reverseMessage() }}</p>
-  </code>
-  </pre>
+
+
+  <h4 class="page-header">3. Data binding with methods</h4>
+  <div id="app-4">
+    <p>You entered: {{ message }}
+      <br> Computed: {{ reverseMessage() }}</p>
+    <input v-model="message">
+  </div>
+  <p>To know the difference between computed property and methods, see <a href="https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods">this comparison</a>. Moreover, computed property has extra benefits when it involves more than one variable. Once any one variable changes, the computed property will also update accordingly. This saves the effort to watch variables manually (see <a href="https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property">this example</a> if you are interested.)</p>
+
+
+  <h4 class="page-header">4. Conditional view via "v-if"</h4>
+  <div id="app-5">
+    <div>
+      <label>
+        <input type="radio" value="A" v-model="picked"> Show A
+      </label>
+      <label>
+        <input type="radio" value="B" v-model="picked"> Show B
+      </label>
+    </div>
+    <div>
+      Picked: {{picked}}
+      <div v-if="picked === 'A'">
+        <div>show content of A</div>
+      </div>
+      <div v-else>
+        <div>show content of B</div>
+      </div> 
+    </div>
+  </div>
+
+
+  <h4 class="page-header">5. Render a list of data via "v-for"</h4>
+  <p>This is very helpful to generate a list of items that have the same format but different content.</p>
+  <div id="app-6">
+    <ul id="example-1">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
+  </div>
+
 
   <!-- include scripts at the bottom of body -->
   <!-- include vue.js via CDN -->
   <script src="https://unpkg.com/vue"></script>
   <script src="index.js"></script>
+  <script>
+  hljs.initHighlightingOnLoad();
+  </script>
 </body>
+
 </html>

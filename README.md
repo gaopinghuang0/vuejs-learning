@@ -24,6 +24,8 @@ grunt
 # 2. run local grunt
 ./node_modules/.bin/grunt
 
+# Then add this script to each html file that needs auto-reloading
+<script src="//localhost:35729/livereload.js"></script>
 ```
 
 ## ~~Webpack~~
