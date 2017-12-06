@@ -1,20 +1,26 @@
 ## Countdown Timer Vuejs Component
 This component is a Single File Vue.js Components Using Webpack. It builds all the stuff under `src/*` into `dist/build.js` via
 
-```shell
-npm install
-# npm install webpack
-webpack
+### Demo
+![countdown-timer](./countdown-timer.png)
+
+### Get Started
+```bash
+npm install webpack
 ```
 
-In index.html, include this component and script (`dist/build.js`). That's it.
+Include the below code into your html page and specify the endtime via `endtime_iso`:
 
 ```html
-<!-- add countdown-timer component and specify the endtime-->
+<!-- specify the endtime at endtime_iso-->
 <div id="countdown-timer-wrapper">
-  <countdown-timer endtime_iso="2017-08-22T15:00:00-0400"></countdown-timer>
+  <countdown-timer endtime_iso="2017-12-07T15:00:00-0400"></countdown-timer>
 </div>
 <script src="dist/build.js"></script>
 ```
 
-To make your own edits, open `src/countdown-timer.vue` and run `webpack` to compile it again.
+### Make edits
+To make your own edits, edit `src/countdown-timer.vue` then
+```bash
+$ webpack  # re-compile js and *.vue into dist/build.js
+```
