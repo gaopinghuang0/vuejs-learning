@@ -1,17 +1,25 @@
 # vuejs-learning
 Mini examples of vuejs. See [official guide](https://vuejs.org/v2/guide/index.html)
 
-## Run
+## Demo
+1. The `Billing address` will update with `Shipping address`.
+2. The `Order total` will update with the change of each item's `Quantity`. 
+
+![checkout](./examples/comprehensive-example/demo-checkout-via-vuejs.png)
+
+Code is in `/examples/comprehensive-example/`
+
+## Getting Started
 ```bash
 python -m SimpleHTTPServer   
 # OR if npm is installed
 npm start
 
-# Then open browser and go to http://localhost:8000
+# Then head to http://localhost:8000
 ```
 
 ## Development
-Open a new tab that is different from the above one for Run
+Open a new tab that is different from the above one.
 ```bash
 npm install  # install all dependency modules
 
@@ -27,9 +35,6 @@ grunt
 # Then add this script to each html file that needs auto-reloading
 <script src="//localhost:35729/livereload.js"></script>
 ```
-
-## Screenshot of ./examples/comprehensive-example
-![checkout](./examples/comprehensive-example/demo-checkout-via-vuejs.png)
 
 ## ~~Webpack~~
 ~~See [beginner guide](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/)~~

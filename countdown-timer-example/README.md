@@ -4,11 +4,7 @@ This component is a Single File Vue.js Components Using Webpack. It builds all t
 ### Demo
 ![countdown-timer](./countdown-timer.png)
 
-### Get Started
-```bash
-npm install webpack
-```
-
+### Getting Started
 Include the below code into your html page and specify the endtime via `endtime_iso`:
 
 ```html
@@ -20,7 +16,10 @@ Include the below code into your html page and specify the endtime via `endtime_
 ```
 
 ### Make edits
-To make your own edits, edit `src/countdown-timer.vue` then
+```bash
+$ npm install # install all dependencies
+```
+Edit `src/countdown-timer.vue` to make your own edits, then
 ```bash
 $ webpack  # re-compile js and *.vue into dist/build.js
 ```
