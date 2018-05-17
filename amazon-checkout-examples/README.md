@@ -3,11 +3,9 @@ Mini examples of [Vue.js](https://vuejs.org/v2/guide/index.html)
 
 ## Demo
 1. The `Billing address` will update with `Shipping address`.
-2. The `Order total` will update with the change of each item's `Quantity`. 
+2. The `Order total` and `tax` will update with the change of each item's `Quantity`. 
 
-<kbd>
-<img src="./images/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
-</kbd>
+Live demo: [Vue.js Example: Amazon Checkout Page](https://gaopinghuang0.github.io/2018/05/17/vuejs-amazon-checkout-demo)
 
 
 ## Getting Started
