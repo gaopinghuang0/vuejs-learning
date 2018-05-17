@@ -6,10 +6,9 @@ Mini examples of [Vue.js](https://vuejs.org/v2/guide/index.html)
 2. The `Order total` will update with the change of each item's `Quantity`. 
 
 <kbd>
-<img src="./examples/comprehensive-example/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
+<img src="./images/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
 </kbd>
 
-Code is in `/examples/`
 
 ## Getting Started
 ```bash
