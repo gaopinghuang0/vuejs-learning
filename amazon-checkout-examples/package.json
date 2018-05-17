@@ -1,8 +1,7 @@
 {
   "name": "Vuejs-learning",
   "version": "0.0.1",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-concurrent": "^2.1.0",

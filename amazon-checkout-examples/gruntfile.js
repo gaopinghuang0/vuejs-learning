@@ -7,10 +7,10 @@ module.exports = function(grunt) {
 				livereload: true,
 			},
 			html: {
-				files: ['index.html', 'examples/*/*.html'],
+				files: ['index.html'],
 			},
 			clientjs: {
-				files: ['examples/*/*.js'],
+				files: ['src/**/*.js'],
 				// tasks: ['concat', 'jshint'],
 			},
 			sass: {
@@ -42,8 +42,7 @@ module.exports = function(grunt) {
     	},
       all: [
           'gruntfile.js',
-          'src/*.js',
-          'examples/*/*.js',
+          'src/*/*.js',
       ]
     },
 

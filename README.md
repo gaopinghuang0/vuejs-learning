@@ -6,10 +6,10 @@ Mini examples of [Vuejs](https://vuejs.org/v2/guide/index.html), such as Amazon 
 2. The `Order total` will update with the change of each item's `Quantity`. 
 
 <kbd>
-<img src="./amazon-checkout-examples/examples/comprehensive-example/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
+<img src="./amazon-checkout-examples/images/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
 </kbd>
 
-Code is in `./amazon-checkout-examples/examples/comprehensive-example/`
+Code is in `./amazon-checkout-examples/`
 
 ### Demo of Countdown Timer
 ![countdown-timer](./countdown-timer-example/countdown-timer.png).

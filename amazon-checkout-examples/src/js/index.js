@@ -44,14 +44,14 @@ new Vue({
     items: [{
       id: 1,
       name: 'Wireless mouse',
-      imgUrl: 'mouse.jpg',
+      imgUrl: 'images/mouse.jpg',
       seller: 'Amazon.com LLC',
       price: 9.99,
       number: 2
     }, {
       id: 2,
       name: 'Wireless keyboard',
-      imgUrl: 'keyboard.png',
+      imgUrl: 'images/keyboard.png',
       seller: 'Amazon.com LLC',
       price: 19.99,
       number: 1

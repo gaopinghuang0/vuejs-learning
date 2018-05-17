@@ -9,7 +9,7 @@ Mini examples of [Vue.js](https://vuejs.org/v2/guide/index.html)
 <img src="./examples/comprehensive-example/demo-checkout-via-vuejs.png" alt="checkout" style="width: 200px;"/>
 </kbd>
 
-Code is in `/examples/comprehensive-example/`
+Code is in `/examples/`
 
 ## Getting Started
 ```bash
@@ -19,7 +19,6 @@ $ npm start
 
 # Then head to http://localhost:8000
 ```
-
 ## Development with Grunt
 Open a new terminal tab:
 ```bash
